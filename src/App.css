@@ -1,38 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   text-align: center;
+  width: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(169, 255, 194, 1) 75%, rgba(154, 238, 255, 1) 100%);
+  padding: 40px 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.pokemonCardContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
+  gap: 24px;
+  margin: 12px;
+  margin-top: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media screen and (max-width: 900px) {
+  .pokemonCardContainer {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+@media screen and (max-width: 500px) {
+  .pokemonCardContainer {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  .pokemonCardContainer {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+/* ボタンのスタイリング */
+.btnArea {
+  margin-top: 40px;
+}
+
+.btnArea button {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+  margin: 0 40px;
+  cursor: pointer;
+}
+
+.btnArea button span {
+  position: relative;
+  z-index: 1;
+  background-color: white;
+  text-align: center;
+  border-radius: 50%;
+  border: 4px rgb(255, 0, 0) solid;
+  padding: 0px 2px 2px;
+  font-size: 20px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.btnArea button::after {
+  content: "";
+  width: 130%;
+  height: 4px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background-color: red;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.btnArea button:hover {
+  animation: btnHover 2s forwards;
+}
+
+@keyframes btnHover {
+  0% {
+    transform: rotate(0);
+    transform-origin: center 55px;
   }
-  to {
-    transform: rotate(360deg);
+  33% {
+    transform: rotate(30deg);
+    transform-origin: center 55px;
+  }
+  66% {
+    transform: rotate(-30deg);
+    transform-origin: center 55px;
+  }
+  100% {
+    transform: rotate(0);
+    transform-origin: center 55px;
   }
 }

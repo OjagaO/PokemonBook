@@ -1,0 +1,34 @@
+.card {
+    box-shadow: 2px 3px 3px 3px rgba(68, 68, 68, 0.55);
+    width: clamp(260px, 25vw, 340px);
+    background-color: rgb(255, 255, 255);
+  }
+  .cardNames {
+    font-size: 1.25rem;
+    font-family: fantasy;
+    margin-bottom: 10px;
+  }
+
+  .cardData p {
+    padding: 2px;
+  }
+
+  .cardInfo {
+    margin: 12px 0 20px;
+  }
+
+
+
+@media screen and (max-width: 900px) {
+
+  .card {
+    width: clamp(200px, 40vw, 340px);
+  }
+}
+
+@media screen and (max-width: 500px) {
+
+  .card {
+    width: 80%;
+  }
+}
