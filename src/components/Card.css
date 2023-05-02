@@ -10,11 +10,21 @@
   }
 
   .cardData p {
-    padding: 2px;
+    padding: 0 20px;
+    text-align: left;
+  }
+
+  .cardAbility {
+    font-size: 14px;
   }
 
   .cardInfo {
     margin: 12px 0 20px;
+  }
+
+  img{
+    width:50%;
+    padding: 12px;
   }
 
 
